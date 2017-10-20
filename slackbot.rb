@@ -1,8 +1,8 @@
 require 'slack-ruby-bot'
 
 class BirthdayBot < SlackRubyBot::Bot
-  command 'ping' do |client, data, match|
-    client.say(text: 'pong', channel: data.channel)
+  match /^birthday$/ do |client, data, match|
+    client.say(channel: data.channel, text: "When is your birhday?")
   end
 end
 
